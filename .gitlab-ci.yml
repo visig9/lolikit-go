@@ -1,0 +1,18 @@
+image: golang:1.11
+
+stages:
+  - test
+
+variables:
+  REPO_NAME: gitlab.com/visig/lolikit-go
+
+before_script:
+  - mkdir -p $GOPATH/src/$REPO_NAME
+  - cp -Trv $CI_PROJECT_DIR $GOPATH/src/$REPO_NAME
+  - cd $GOPATH/src/$REPO_NAME
+  - go get -t ./...
+
+test-job:
+  stage: test
+  script:
+    - go test ./...
