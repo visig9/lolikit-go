@@ -62,6 +62,16 @@ func (c *Cfg) ListPageSize(inPageSize int) int {
 	).(int)
 }
 
+// ListPageSize return the list page size value.
+func (c *Cfg) ServeAddr(inAddr string) string {
+	return first.One(
+		inAddr,
+		c.rv.GetInt("serve.address"),
+		c.uv.GetInt("serve.address"),
+		":10204",
+	).(string)
+}
+
 // TextTypes return the text-types.
 func (c *Cfg) TextTypes() *hashset.Set {
 	sli := first.One(

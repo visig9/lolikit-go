@@ -2,39 +2,13 @@
 package serve
 
 import (
-	"fmt"
-	"log"
 	"net/http"
 
 	"github.com/spf13/cobra"
 	"gitlab.com/visig/lolikit-go/cmd/config"
 	"gitlab.com/visig/lolikit-go/cmd/env"
-	"gitlab.com/visig/lolikit-go/loli2"
+	"gitlab.com/visig/lolikit-go/logger"
 )
-
-func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<h1>ok</h1><div>Hi there, I love %s!</div>", r.URL.Path[1:])
-}
-
-func routing(repo loli2.Repo) {
-	http.HandleFunc("/", handler)
-
-	http.Handle(
-		"/raw/",
-		http.StripPrefix(
-			"/raw/",
-			http.FileServer(&repoFileSystem{repo}),
-		),
-	)
-
-	http.Handle(
-		"/view/",
-		http.StripPrefix(
-			"/view/",
-			newViewHandler(repo),
-		),
-	)
-}
 
 // ServeCmd offer a command for initialize a lolinote repo.
 var ServeCmd = &cobra.Command{
@@ -47,8 +21,15 @@ var ServeCmd = &cobra.Command{
 
 		repo := cfg.Repo()
 
-		routing(repo)
-		log.Fatal(http.ListenAndServe(":8080", nil))
+		inAddr, _ := cmd.Flags().GetString("addr")
+		addr := cfg.ServeAddr(inAddr)
+
+		http.Handle("/", http.FileServer(&repoFileSystem{repo}))
+
+		logger.Std.Printf(
+			"Lolikit listening on %v", addr,
+		)
+		logger.Err.Fatal(http.ListenAndServe(addr, nil))
 	},
 }
 
@@ -56,5 +37,9 @@ func init() {
 	ServeCmd.Flags().StringP(
 		"repo", "r", "",
 		"assign a Lolinote repository",
+	)
+	ServeCmd.Flags().StringP(
+		"addr", "a", "",
+		"http server's bind address",
 	)
 }

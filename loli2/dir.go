@@ -1,12 +1,8 @@
 package loli2
 
 import (
-	"fmt"
 	"io/ioutil"
 	"path/filepath"
-
-	"gitlab.com/visig/lolikit-go/fstest"
-	"gitlab.com/visig/lolikit-go/pathrange"
 )
 
 // Dir represent a lolinote-folder structure in lolinote.
@@ -84,50 +80,4 @@ func (d Dir) Walk(walkfn func(Entry)) {
 
 		walkfn(entry)
 	}
-}
-
-// Get return the particular sub entry by fs path.
-//
-// error != nil when:
-//   1. target path not found.
-//   2. target path be shadowed by some other entry.
-func (d Dir) Get(path string) (e Entry, err error) {
-	if !fstest.IsExist(path) {
-		return nil, fmt.Errorf("path not found: %v", path)
-	}
-
-	pr, err := pathrange.PathRange(d.path, path)
-	if err != nil {
-		return
-	}
-
-	e, err = buildEntry(path)
-	if err != nil {
-		return
-	}
-
-	for i := 0; i < len(pr); i++ {
-		p := pr[i]
-
-		e, err = buildEntry(p)
-		if err != nil {
-			return
-		}
-
-		switch e.(type) {
-		case Dir: // continue search
-		case Noise: // stop and fail.
-			return nil, fmt.Errorf("it's a noise: %v", path)
-		case *ComplexNote:
-			if len(pr) != i+1 {
-				// something in attachment dir.
-				return nil, fmt.Errorf(
-					"path %v shadowed by entry %v",
-					path, p,
-				)
-			}
-		}
-	}
-
-	return
 }
