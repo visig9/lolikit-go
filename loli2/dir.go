@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 
 	"gitlab.com/visig/lolikit-go/fstest"
+	"gitlab.com/visig/lolikit-go/pathrange"
 )
 
 // Dir represent a lolinote-folder structure in lolinote.
@@ -85,40 +86,48 @@ func (d Dir) Walk(walkfn func(Entry)) {
 	}
 }
 
-// Get return the particular sub entry by relative entry pathParts.
-// The pathparts is a slice of string contain multiple part of this path.
+// Get return the particular sub entry by fs path.
 //
 // error != nil when:
 //   1. target path not found.
 //   2. target path be shadowed by some other entry.
-func (d Dir) Get(pathParts []string) (Entry, error) {
-	targetPath := filepath.Join(d.path, filepath.Join(pathParts...))
-	if fstest.IsExist(targetPath) {
-		return nil, fmt.Errorf("path not found: %v", targetPath)
+func (d Dir) Get(path string) (e Entry, err error) {
+	if !fstest.IsExist(path) {
+		return nil, fmt.Errorf("path not found: %v", path)
 	}
 
-	path := d.path
-	out := d
+	pr, err := pathrange.PathRange(d.path, path)
+	if err != nil {
+		return
+	}
 
-	for i := 0; i < len(pathParts); i++ {
-		path = filepath.Clean(filepath.Join(path, pathParts[i]))
-		out, err := buildEntry(path)
+	e, err = buildEntry(path)
+	if err != nil {
+		return
+	}
+
+	for i := 0; i < len(pr); i++ {
+		p := pr[i]
+
+		e, err = buildEntry(p)
 		if err != nil {
-			return nil, err
+			return
 		}
 
-		switch out.(type) {
+		switch e.(type) {
 		case Dir: // continue search
-		default: // hit the leaf element
-			if len(pathParts) != i+1 {
-				// something shadowed by leaf structure.
+		case Noise: // stop and fail.
+			return nil, fmt.Errorf("it's a noise: %v", path)
+		case *ComplexNote:
+			if len(pr) != i+1 {
+				// something in attachment dir.
 				return nil, fmt.Errorf(
 					"path %v shadowed by entry %v",
-					targetPath, path,
+					path, p,
 				)
 			}
 		}
 	}
 
-	return out, nil
+	return
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Note.Title }} - Lolinote</title>
+    <style>
+    body {
+      font-size: 18px;
+    }
+
+    span.sub-title {
+      font-size: 0.5em;
+      color: gray;
+      font-style: italic;
+    }
+
+    pre.has-wrap {
+      white-space: pre-wrap;
+    }
+    </style>
+  </head>
+  <body>
+    <h1>
+      {{- .Note.Title }}<br />
+      <span class="sub-title">[{{ .Note.ContentType }}] {{ .Reldir }}</span>
+    </h1>
+    <hr />
+    <article>
+      <pre class="has-wrap">{{- readfile .Note.ContentPath -}}</pre>
+    </article>
+  </body>
+</html>

@@ -17,10 +17,10 @@ build_dist() {
     fi
 
     GOOS=${goos} GOARCH=${goarch} go get ./...\
-    && GOOS=${goos} GOARCH=${goarch} go build\
+    && GOOS=${goos} GOARCH=${goarch} packr2 build\
         -ldflags "-X main.version=${VERSION}"\
         -o $target\
-        -v $PACKAGE\
+        $PACKAGE\
     && echo "build $target successed"
 }
 
@@ -40,10 +40,10 @@ install() {
         mkdir -p $install_dir
     fi
 
-    go build\
+    packr2 build\
         -ldflags "-X main.version=${VERSION}"\
         -o $NAME\
-        -v $PACKAGE\
+        $PACKAGE\
     && mv $NAME $install_dir/$NAME\
     && echo "install '$PACKAGE' as '$NAME' successed"
 }
