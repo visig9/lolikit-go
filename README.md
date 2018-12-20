@@ -86,4 +86,4 @@ MIT
 
 
 
-[Lolinote 2.0]: https://gitlab.com/visig/lolinote-spec/
+[Lolinote 2.0]: https://gitlab.com/visig/lolinote-spec/blob/master/spec-2.0.md
