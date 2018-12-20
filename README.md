@@ -2,9 +2,7 @@
 
 The [Lolinote 2.0] is a simple data specification for personal note-taking.
 
-Lolikit offer some extra conveniences to help users to manage their data for daily noting.
-
-> Hint: Lolinote wasn't lean on this program, just for conveniences.
+This tool kit offer some extra conveniences to help user to manage their [Lolinote 2.0] repository for daily noting.
 
 
 
@@ -58,7 +56,7 @@ address = ":10204"          # default http address
 
 <https://gitlab.com/visig/lolikit-go/tags>
 
-> note: due to developer didn't have some environments, currently only support linux `386`, `amd64` and `arm` platforms, sorry.
+> note: due to developer didn't have some environments, currently only support linux `386`, `amd64` and `arm` platforms, sorry. You can try to build by yourself for local platform. See below.
 
 
 
