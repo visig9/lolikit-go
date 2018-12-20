@@ -41,10 +41,13 @@ page-size = 10              # default page size of a list
 runner = "xdg-open"         # default runner for any content type
 dir-runner = "nautilus"     # default directory runner
 
-[list.runners]         # default runner for particular content-type
+[list.runners]              # default runner for particular content-type
 md  = "wc -l"
 txt = "gedit"
 jpg = "firefox"
+
+[serve]
+address = ":10204"          # default http address
 ```
 
 

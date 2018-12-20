@@ -59,8 +59,8 @@ func createRepo(path string) {
 // InitCmd offer a command for initialize a lolinote repo.
 var InitCmd = &cobra.Command{
 	Use:   "init [path]",
-	Short: "initialize a Lolinote repository",
-	Long: `initialize a Lolinote repository
+	Short: "Initialize a Lolinote repository",
+	Long: `Initialize a Lolinote repository
 
   By default, this command will initialize a lolinote repository in
   current working directory.

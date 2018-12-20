@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-// PathRange build a range of paths between two paths.
+// PathRange build a range of filesystem's paths between two paths.
 //
 // The return slice would not contain "from" path. If build a range is
 // impossiable, err != nil.
