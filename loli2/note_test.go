@@ -1,6 +1,7 @@
 package loli2
 
 import (
+	"encoding/json"
 	"os"
 	"testing"
 	"time"
@@ -73,6 +74,14 @@ func TestSimpleNote(t *testing.T) {
 		assert.Equal(t, c.wcp, n.ContentPath())
 		assert.Equal(t, c.wct, n.ContentType())
 		assert.Equal(t, getMTimeForTest(c.wcp), n.MTime())
+
+		njd := noteJSONData{}
+		json.Unmarshal(n.JSON(), &njd)
+		assert.Equal(t, c.wp, njd.Path)
+		assert.Equal(t, c.wt, njd.Title)
+		assert.Equal(t, c.wcp, njd.ContentPath)
+		assert.Equal(t, c.wct, njd.ContentType)
+		assert.Equal(t, getMTimeForTest(c.wcp), njd.ModTime)
 	}
 }
 
@@ -138,5 +147,13 @@ func TestComplexNote(t *testing.T) {
 		assert.Equal(t, c.wcp, n.ContentPath())
 		assert.Equal(t, c.wct, n.ContentType())
 		assert.Equal(t, getMTimeForTest(c.wcp), n.MTime())
+
+		njd := noteJSONData{}
+		json.Unmarshal(n.JSON(), &njd)
+		assert.Equal(t, c.wp, njd.Path)
+		assert.Equal(t, c.wt, njd.Title)
+		assert.Equal(t, c.wcp, njd.ContentPath)
+		assert.Equal(t, c.wct, njd.ContentType)
+		assert.Equal(t, getMTimeForTest(c.wcp), njd.ModTime)
 	}
 }

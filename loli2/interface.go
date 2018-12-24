@@ -11,6 +11,7 @@ type Note interface {
 	ContentPath() string
 	ContentType() string
 	MTime() time.Time
+	JSON() []byte
 }
 
 // Entry is a interface reference to Lolinote fs entry.

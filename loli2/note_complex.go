@@ -42,6 +42,11 @@ func (n *ComplexNote) MTime() time.Time {
 	return *getMTime(&n.mtimeCache, n.ContentPath())
 }
 
+// JSON return the json string of this note.
+func (n *ComplexNote) JSON() []byte {
+	return getNoteJSON(n, "ComplexNote")
+}
+
 // The index page finder
 
 type complexNoteIndexError struct {

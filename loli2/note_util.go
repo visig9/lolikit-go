@@ -1,6 +1,7 @@
 package loli2
 
 import (
+	"encoding/json"
 	"os"
 	"path/filepath"
 	"strings"
@@ -28,4 +29,30 @@ func getMTime(mtimeCachePtr *time.Time, contentPath string) *time.Time {
 	}
 
 	return mtimeCachePtr
+}
+
+type noteJSONData struct {
+	Path        string    `json:"path"`
+	Title       string    `json:"title"`
+	ContentPath string    `json:"contentPath"`
+	ContentType string    `json:"contentType"`
+	Type        string    `json:"type"`
+	ModTime     time.Time `json:"modTime"`
+}
+
+// GetNoteJSON return a json represent of a note.
+func getNoteJSON(n Note, noteType string) []byte {
+	data, err := json.Marshal(noteJSONData{
+		Path:        n.Path(),
+		Title:       n.Title(),
+		ContentPath: n.ContentPath(),
+		ContentType: n.ContentType(),
+		ModTime:     n.MTime(),
+		Type:        noteType,
+	})
+	if err != nil {
+		panic(err)
+	}
+
+	return data
 }

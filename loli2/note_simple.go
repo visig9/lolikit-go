@@ -39,3 +39,8 @@ func (n SimpleNote) ContentType() string {
 func (n *SimpleNote) MTime() time.Time {
 	return *getMTime(&n.mtimeCache, n.ContentPath())
 }
+
+// JSON return the json string of this note.
+func (n *SimpleNote) JSON() []byte {
+	return getNoteJSON(n, "SimpleNote")
+}

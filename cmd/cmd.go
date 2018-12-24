@@ -4,6 +4,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"gitlab.com/visig/lolikit-go/cmd/initial"
+	"gitlab.com/visig/lolikit-go/cmd/jsoncmd"
 	"gitlab.com/visig/lolikit-go/cmd/list"
 	"gitlab.com/visig/lolikit-go/cmd/serve"
 )
@@ -29,6 +30,7 @@ func init() {
 	rootCmd.AddCommand(list.ListCmd)
 	rootCmd.AddCommand(initial.InitCmd)
 	rootCmd.AddCommand(serve.ServeCmd)
+	rootCmd.AddCommand(jsoncmd.JSONCmd)
 }
 
 func main() {

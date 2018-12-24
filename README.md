@@ -11,6 +11,7 @@ This tool kit offer some extra conveniences with command-line interface to helpi
 - Listing some note by file's modify time or term-frequency score, and optional run / open it.
 - Initialize a lolinote repository.
 - Serving a lolinote repository as a HTTP file service.
+- Print all note's information in JSON format.
 
 
 
