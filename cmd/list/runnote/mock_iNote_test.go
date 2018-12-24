@@ -38,6 +38,22 @@ func (_m *mockINote) ContentType() string {
 	return r0
 }
 
+// JSON provides a mock function with given fields:
+func (_m *mockINote) JSON() []byte {
+	ret := _m.Called()
+
+	var r0 []byte
+	if rf, ok := ret.Get(0).(func() []byte); ok {
+		r0 = rf()
+	} else {
+		if ret.Get(0) != nil {
+			r0 = ret.Get(0).([]byte)
+		}
+	}
+
+	return r0
+}
+
 // MTime provides a mock function with given fields:
 func (_m *mockINote) MTime() time.Time {
 	ret := _m.Called()
