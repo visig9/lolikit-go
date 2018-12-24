@@ -81,7 +81,6 @@ func TestSimpleNote(t *testing.T) {
 		assert.Equal(t, c.wt, njd.Title)
 		assert.Equal(t, c.wcp, njd.ContentPath)
 		assert.Equal(t, c.wct, njd.ContentType)
-		assert.Equal(t, getMTimeForTest(c.wcp), njd.ModTime)
 	}
 }
 
@@ -154,6 +153,5 @@ func TestComplexNote(t *testing.T) {
 		assert.Equal(t, c.wt, njd.Title)
 		assert.Equal(t, c.wcp, njd.ContentPath)
 		assert.Equal(t, c.wct, njd.ContentType)
-		assert.Equal(t, getMTimeForTest(c.wcp), njd.ModTime)
 	}
 }
