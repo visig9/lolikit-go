@@ -62,7 +62,7 @@ func (c *Cfg) ListPageSize(inPageSize int) int {
 	).(int)
 }
 
-// ListPageSize return the list page size value.
+// ServeAddr return the list page size value.
 func (c *Cfg) ServeAddr(inAddr string) string {
 	return first.One(
 		inAddr,
@@ -148,4 +148,22 @@ func (c *Cfg) ListDirRunner(inRunner []string) (
 	}
 
 	return
+}
+
+// NewBuffer return the New buffer directory name.
+func (c *Cfg) NewBuffer() string {
+	return first.One(
+		c.rv.GetString("new.buffer"),
+		c.uv.GetString("new.buffer"),
+		"to-be-classified",
+	).(string)
+}
+
+// NewBufferSize return the add buffer-size.
+func (c *Cfg) NewBufferSize() int {
+	return first.One(
+		c.rv.GetInt("new.buffer-size"),
+		c.uv.GetInt("new.buffer-size"),
+		10,
+	).(int)
 }

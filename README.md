@@ -75,6 +75,10 @@ md  = "wc -l"
 txt = "gedit"
 jpg = "firefox"
 
+[new]
+buffer = "to-be-classfied"  # the buffer area for quick added note
+buffer-size = 10            # the maximum entry should take time to moving.
+
 [serve]
 address = ":10204"          # default http address
 ```

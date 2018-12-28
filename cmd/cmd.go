@@ -6,6 +6,7 @@ import (
 	"gitlab.com/visig/lolikit-go/cmd/initial"
 	"gitlab.com/visig/lolikit-go/cmd/jsoncmd"
 	"gitlab.com/visig/lolikit-go/cmd/list"
+	"gitlab.com/visig/lolikit-go/cmd/newnote"
 	"gitlab.com/visig/lolikit-go/cmd/serve"
 )
 
@@ -31,6 +32,7 @@ func init() {
 	rootCmd.AddCommand(initial.InitCmd)
 	rootCmd.AddCommand(serve.ServeCmd)
 	rootCmd.AddCommand(jsoncmd.JSONCmd)
+	rootCmd.AddCommand(newnote.NewCmd)
 }
 
 func main() {

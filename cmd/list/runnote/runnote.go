@@ -124,7 +124,7 @@ func buildArgs(
 }
 
 func runArgs(args []string) error {
-	// logger.Std.Print("Run command:", shellquote.Join(args...))
+	// logger.Std.Print("list: ", shellquote.Join(args...))
 
 	cmd := exec.Command(args[0], args[1:]...)
 	cmd.Stdin = os.Stdin
