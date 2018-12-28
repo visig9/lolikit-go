@@ -89,8 +89,6 @@ func TestCfgListRunner(t *testing.T) {
 		inr          []string // inRunner
 		rvctr, uvctr string   // rv & uv's content type runner
 		rvr, uvr     string   // rv & uv's default runner
-		w            []string // want
-		we           bool     // want err
 		wc           []string // want ListContentRunner
 		wce          bool     // want ListContentRunner error
 	}{
@@ -99,20 +97,17 @@ func TestCfgListRunner(t *testing.T) {
 			"", "",
 			"", "",
 			[]string{}, true,
-			[]string{}, true,
 		},
 		{ // should err by bad config string
 			"txt", []string{},
 			"rvctr\"", "",
 			"", "",
 			[]string{}, true,
-			[]string{}, true,
 		},
 		{
 			"txt", []string{"ok"},
 			"", "",
 			"", "",
-			[]string{"ok"}, false,
 			[]string{"ok"}, false,
 		},
 		{
@@ -120,13 +115,11 @@ func TestCfgListRunner(t *testing.T) {
 			"rvcrt", "",
 			"", "",
 			[]string{"ok"}, false,
-			[]string{"ok"}, false,
 		},
 		{
 			"txt", []string{},
 			"rvctr", "",
 			"", "",
-			[]string{}, true,
 			[]string{"rvctr"}, false,
 		},
 	}
@@ -141,13 +134,6 @@ func TestCfgListRunner(t *testing.T) {
 		uv.On("GetString", "list.runner").Return(c.uvr)
 
 		cfg := Cfg{uv: uv, rv: rv}
-
-		if runner, err := cfg.ListRunner(c.inr); c.we {
-			assert.Error(t, err, "%v", c)
-		} else {
-			assert.Nil(t, err, "%v", c)
-			assert.Equal(t, c.w, runner, "%v", c)
-		}
 
 		if runner, err := cfg.ListContentRunner(c.inr, c.ct); c.wce {
 			assert.Error(t, err, "%v", c)

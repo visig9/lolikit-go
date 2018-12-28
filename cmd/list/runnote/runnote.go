@@ -53,7 +53,6 @@ func getNote(page pager.Page, runid int) iNote {
 
 // Cfg is a config object interface.
 type Cfg interface {
-	ListRunner([]string) ([]string, error)
 	ListContentRunner([]string, string) ([]string, error)
 	ListDirRunner([]string) ([]string, error)
 }

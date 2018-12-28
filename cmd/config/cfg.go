@@ -88,24 +88,6 @@ func (c *Cfg) TextTypes() *hashset.Set {
 	return out
 }
 
-// ListRunner return the runner with default runner.
-func (c *Cfg) ListRunner(inRunner []string) (runner []string, err error) {
-	if len(inRunner) > 0 {
-		runner = inRunner
-	} else {
-		runner, err = shellquote.Split(first.One(
-			c.rv.GetString("list.runner"),
-			c.uv.GetString("list.runner"),
-		).(string))
-
-		if err == nil && len(runner) == 0 {
-			err = errors.New("runner not found, please assign it first")
-		}
-	}
-
-	return
-}
-
 // ListContentRunner return the runner for the content type.
 func (c *Cfg) ListContentRunner(
 	inRunner []string, contentType string,
