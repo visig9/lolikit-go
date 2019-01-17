@@ -4,14 +4,16 @@ The [Lolinote 2.0] is a simple data specification for personal note-taking.
 
 This tool kit offer some extra conveniences with command-line interface to helping user to manage their [Lolinote 2.0] repository for daily noting.
 
+> This program still in heavy developing and the interface may be changed in future.
+
 
 
 ## Features
 
-- Listing some note by file's modify time or term-frequency score, and optional run / open it.
 - Initialize a lolinote repository.
 - Serving a lolinote repository as a HTTP file service.
-- Print all note's information in JSON format.
+- Listing some note by file's modify time or term-frequency score, and optional run / open it.
+- Print all metadata of notes in JSON format for further processing.
 
 
 
