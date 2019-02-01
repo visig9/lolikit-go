@@ -1,5 +1,7 @@
 # lolikit-go
 
+[![Build Status](https://travis-ci.org/visig9/lolikit-go.svg?branch=master)](https://travis-ci.org/visig9/lolikit-go)
+
 The [Lolinote 2.0] is a simple data specification for personal note-taking.
 
 This tool kit offer some extra conveniences with command-line interface to helping user to manage their [Lolinote 2.0] repository for daily noting.
