@@ -2,20 +2,21 @@
 
 [![Build Status](https://travis-ci.org/visig9/lolikit-go.svg?branch=master)](https://travis-ci.org/visig9/lolikit-go)
 
+> This program still in heavy developing and the UI may be overhauled in future.
+
 The [Lolinote 2.0] is a simple data specification for personal note-taking.
 
 This tool kit offer some extra conveniences with command-line interface to helping user to manage their [Lolinote 2.0] repository for daily noting.
-
-> This program still in heavy developing and the interface may be changed in future.
 
 
 
 ## Features
 
 - Initialize a lolinote repository.
-- Serving a lolinote repository as a HTTP file service.
 - Listing some note by file's modify time or term-frequency score, and optional run / open it.
+- create new note quickly in buffer directory.
 - Print all metadata of notes in JSON format for further processing.
+- Serving a lolinote repository as a HTTP file service.
 
 
 
