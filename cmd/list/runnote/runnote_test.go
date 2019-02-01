@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"gitlab.com/visig/lolikit-go/loli2"
-	"gitlab.com/visig/pager"
+	"github.com/visig9/lolikit-go/loli2"
+	"github.com/visig9/pager"
 )
 
 func TestCheck(t *testing.T) {

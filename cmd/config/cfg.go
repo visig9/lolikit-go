@@ -6,9 +6,9 @@ import (
 	"github.com/emirpasic/gods/sets/hashset"
 	shellquote "github.com/kballard/go-shellquote"
 
-	"gitlab.com/visig/lolikit-go/cmd/config/first"
-	"gitlab.com/visig/lolikit-go/logger"
-	"gitlab.com/visig/lolikit-go/loli2"
+	"github.com/visig9/lolikit-go/cmd/config/first"
+	"github.com/visig9/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/loli2"
 )
 
 // Cfg is config object of whole project.

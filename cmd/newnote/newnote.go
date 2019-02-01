@@ -9,9 +9,9 @@ import (
 
 	shellquote "github.com/kballard/go-shellquote"
 	"github.com/spf13/cobra"
-	"gitlab.com/visig/lolikit-go/cmd/config"
-	"gitlab.com/visig/lolikit-go/cmd/env"
-	"gitlab.com/visig/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/cmd/config"
+	"github.com/visig9/lolikit-go/cmd/env"
+	"github.com/visig9/lolikit-go/logger"
 )
 
 func verifyArgs(args []string) {

@@ -3,11 +3,11 @@ package main
 import (
 	"github.com/spf13/cobra"
 
-	"gitlab.com/visig/lolikit-go/cmd/initial"
-	"gitlab.com/visig/lolikit-go/cmd/jsoncmd"
-	"gitlab.com/visig/lolikit-go/cmd/list"
-	"gitlab.com/visig/lolikit-go/cmd/newnote"
-	"gitlab.com/visig/lolikit-go/cmd/serve"
+	"github.com/visig9/lolikit-go/cmd/initial"
+	"github.com/visig9/lolikit-go/cmd/jsoncmd"
+	"github.com/visig9/lolikit-go/cmd/list"
+	"github.com/visig9/lolikit-go/cmd/newnote"
+	"github.com/visig9/lolikit-go/cmd/serve"
 )
 
 var version string
@@ -21,8 +21,8 @@ var rootCmd = &cobra.Command{
   Lolikit offer some extra conveniences to help users to manage their
   data for daily noting.
 
-  Source Code: https://gitlab.com/visig/lolikit-go
-  Lolinote Spec: https://gitlab.com/visig/lolinote-spec
+  Source Code: https://github.com/visig9/lolikit-go
+  Lolinote Spec: https://github.com/visig9/lolinote-spec
 	`,
 	Version: version,
 }

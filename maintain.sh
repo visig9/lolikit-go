@@ -1,4 +1,4 @@
-PACKAGE=gitlab.com/visig/lolikit-go/cmd
+PACKAGE=github.com/visig9/lolikit-go/cmd
 NAME=loli
 VERSION=`git describe`
 TMPDIR=/tmp/tf-$VERSION
@@ -21,9 +21,6 @@ build_dist() {
         -ldflags "-X main.version=${VERSION}"\
         -o $target\
         $PACKAGE\
-    && rm -f ${target}.zip\
-    && zip -j ${target}.zip $target\
-    && rm ${target}\
     && echo "build $target successed"
 }
 

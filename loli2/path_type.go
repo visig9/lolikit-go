@@ -4,7 +4,7 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gitlab.com/visig/lolikit-go/fstest"
+	"github.com/visig9/lolikit-go/fstest"
 )
 
 // IsRepo detect a path is a Repo or not.

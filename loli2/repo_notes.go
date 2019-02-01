@@ -3,7 +3,7 @@ package loli2
 import (
 	"github.com/emirpasic/gods/lists/arraylist"
 	"github.com/emirpasic/gods/sets"
-	"gitlab.com/visig/tf/textrel"
+	"github.com/visig9/tf/textrel"
 )
 
 func (r *Repo) notes() *arraylist.List {

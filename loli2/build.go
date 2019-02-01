@@ -3,7 +3,7 @@ package loli2
 import (
 	"fmt"
 
-	"gitlab.com/visig/lolikit-go/fstest"
+	"github.com/visig9/lolikit-go/fstest"
 )
 
 // buildEntry build a entry instance from specific filesystem path.

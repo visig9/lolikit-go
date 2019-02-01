@@ -6,9 +6,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"gitlab.com/visig/elign"
-	"gitlab.com/visig/lolikit-go/loli2"
-	"gitlab.com/visig/pager"
+	"github.com/visig9/elign"
+	"github.com/visig9/lolikit-go/loli2"
+	"github.com/visig9/pager"
 )
 
 //go:generate mockery -name iNote -testonly -inpkg

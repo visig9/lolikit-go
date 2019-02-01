@@ -21,7 +21,7 @@ This tool kit offer some extra conveniences with command-line interface to helpi
 
 ### Pre-build Files
 
-<https://gitlab.com/visig/lolikit-go/tags>
+<https://github.com/visig9/lolikit-go/releases>
 
 > note: due to developer didn't have some environments, currently only support linux `386`, `amd64` and `arm` platforms, sorry. You can try to build by yourself for local platform. See below.
 
@@ -32,8 +32,8 @@ This tool kit offer some extra conveniences with command-line interface to helpi
 Prepare a golang environment, then:
 
 ```bash
-go get -d -t gitlab.com/visig/lolikit-go/...
-cd $(go env GOPATH)/src/gitlab.com/visig/lolikit-go
+go get -d -t github.com/visig9/lolikit-go/...
+cd $(go env GOPATH)/src/github.com/visig9/lolikit-go
 ./maintain.sh install
 ```
 
@@ -93,4 +93,4 @@ MIT
 
 
 
-[Lolinote 2.0]: https://gitlab.com/visig/lolinote-spec/blob/master/spec-2.0.md
+[Lolinote 2.0]: https://github.com/visig9/lolinote-spec

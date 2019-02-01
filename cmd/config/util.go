@@ -6,8 +6,8 @@ import (
 	"path/filepath"
 
 	"github.com/spf13/viper"
-	"gitlab.com/visig/lolikit-go/fstest"
-	"gitlab.com/visig/lolikit-go/loli2"
+	"github.com/visig9/lolikit-go/fstest"
+	"github.com/visig9/lolikit-go/loli2"
 )
 
 //go:generate mockery -name iViper -testonly -inpkg

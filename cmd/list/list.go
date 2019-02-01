@@ -5,14 +5,14 @@ import (
 	"github.com/emirpasic/gods/lists/arraylist"
 	"github.com/spf13/cobra"
 
-	"gitlab.com/visig/lolikit-go/cmd/config"
-	"gitlab.com/visig/lolikit-go/cmd/env"
-	"gitlab.com/visig/lolikit-go/cmd/list/nps"
-	"gitlab.com/visig/lolikit-go/cmd/list/runnote"
-	"gitlab.com/visig/lolikit-go/logger"
-	"gitlab.com/visig/lolikit-go/loli2"
-	"gitlab.com/visig/lolikit-go/parse"
-	"gitlab.com/visig/pager"
+	"github.com/visig9/lolikit-go/cmd/config"
+	"github.com/visig9/lolikit-go/cmd/env"
+	"github.com/visig9/lolikit-go/cmd/list/nps"
+	"github.com/visig9/lolikit-go/cmd/list/runnote"
+	"github.com/visig9/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/loli2"
+	"github.com/visig9/lolikit-go/parse"
+	"github.com/visig9/pager"
 )
 
 func assertGoodInput(inAttMode, inDirMode, inEntryMode bool) {

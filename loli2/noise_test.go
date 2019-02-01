@@ -5,7 +5,7 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"gitlab.com/visig/lolikit-go/loli2/simplerepo"
+	"github.com/visig9/lolikit-go/loli2/simplerepo"
 )
 
 func TestIsNoise(t *testing.T) {

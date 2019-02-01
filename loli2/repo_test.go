@@ -7,7 +7,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"gitlab.com/visig/lolikit-go/fstest"
+	"github.com/visig9/lolikit-go/fstest"
 )
 
 func isRepoFS(path string) bool {

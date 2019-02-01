@@ -5,9 +5,9 @@ import (
 	"path/filepath"
 
 	"github.com/spf13/cobra"
-	"gitlab.com/visig/lolikit-go/cmd/env"
-	"gitlab.com/visig/lolikit-go/logger"
-	"gitlab.com/visig/lolikit-go/loli2"
+	"github.com/visig9/lolikit-go/cmd/env"
+	"github.com/visig9/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/loli2"
 )
 
 func assertArgsNumber(args []string) {

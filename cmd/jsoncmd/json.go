@@ -3,10 +3,10 @@ package jsoncmd
 
 import (
 	"github.com/spf13/cobra"
-	"gitlab.com/visig/lolikit-go/cmd/config"
-	"gitlab.com/visig/lolikit-go/cmd/env"
-	"gitlab.com/visig/lolikit-go/logger"
-	"gitlab.com/visig/lolikit-go/loli2"
+	"github.com/visig9/lolikit-go/cmd/config"
+	"github.com/visig9/lolikit-go/cmd/env"
+	"github.com/visig9/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/loli2"
 )
 
 // JSONCmd offer a command for print all note data in json format.

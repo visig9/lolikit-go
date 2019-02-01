@@ -7,7 +7,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"gitlab.com/visig/lolikit-go/pathrange"
+	"github.com/visig9/lolikit-go/pathrange"
 )
 
 // func keepWithoutPrefixDot(name string) bool {

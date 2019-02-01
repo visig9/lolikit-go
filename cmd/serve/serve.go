@@ -6,10 +6,10 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-	"gitlab.com/visig/lolikit-go/cmd/config"
-	"gitlab.com/visig/lolikit-go/cmd/env"
-	"gitlab.com/visig/lolikit-go/httpfs"
-	"gitlab.com/visig/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/cmd/config"
+	"github.com/visig9/lolikit-go/cmd/env"
+	"github.com/visig9/lolikit-go/httpfs"
+	"github.com/visig9/lolikit-go/logger"
 )
 
 func fsFilter(name string) bool {

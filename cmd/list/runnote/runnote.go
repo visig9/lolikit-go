@@ -7,10 +7,10 @@ import (
 	"os/exec"
 	"path/filepath"
 
-	"gitlab.com/visig/lolikit-go/fstest"
-	"gitlab.com/visig/lolikit-go/logger"
-	"gitlab.com/visig/lolikit-go/loli2"
-	"gitlab.com/visig/pager"
+	"github.com/visig9/lolikit-go/fstest"
+	"github.com/visig9/lolikit-go/logger"
+	"github.com/visig9/lolikit-go/loli2"
+	"github.com/visig9/pager"
 )
 
 // Type define how to run the openNote function (must choicing one)
