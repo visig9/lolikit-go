@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/visig9/lolikit-go.svg?branch=master)](https://travis-ci.org/visig9/lolikit-go)
 
-> This program still in heavy developing and the UI may be overhauled in future.
+> This program still in heavy developing & experimenting, the UI may be overhauled in future.
 
 The [Lolinote 2.0] is a simple data specification for personal note-taking.
 
