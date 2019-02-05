@@ -41,11 +41,11 @@ func (r *Repo) NotesByMod() *arraylist.List {
 // if withContent is ture, add extra relevance between terms and
 // it's content.
 func getNoteRel(n Note, terms []string, withContent bool) float64 {
-	rel := textrel.ByTerms(n.Title(), terms)
+	rel := textrel.ByTermsCI(n.Title(), terms)
 
 	if withContent {
 		crel, err := textrel.FileByTerms(
-			n.ContentPath(), terms, 0,
+			n.ContentPath(), terms, textrel.CaseInsensitive,
 		)
 		if err != nil { // file not found should not happen
 			panic(err)

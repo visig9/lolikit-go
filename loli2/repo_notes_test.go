@@ -125,7 +125,7 @@ func TestNotesByRel(t *testing.T) {
 			},
 		},
 		{
-			[]string{"orange"}, hashset.New("txt", "md"),
+			[]string{"Orange"}, hashset.New("txt", "md"),
 			[]interface{}{
 				&SimpleNote{path: "testdata/rel-repo/orange.txt"},
 			},
