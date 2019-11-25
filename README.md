@@ -95,5 +95,5 @@ address = ":10204"          # default http address
 MIT
 
 
-
 [Lolinote 2.0]: https://github.com/visig9/lolinote-spec
+[Lolinote 2.0 (draft 5)]: https://github.com/visig9/lolinote-spec
